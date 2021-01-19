@@ -49,38 +49,62 @@ ReactDOM.render(
   <>
     <WeatherSummary
       dayOfWeek="Monday"
-      percipitation="Light Rain"
+      weatherCondition="Light Rain"
       icon="https://picsum.photos/id/1/200/200"
+      currentTemp={95}
       highTemp={99}
       lowTemp={50} 
+      percipitation={10}
+      humidity={64}
+      windSpeed={6}
       />
 
     <WeatherSummary
       dayOfWeek="Tuesday"
+      weatherCondition="Light Rain"
       icon="https://picsum.photos/id/2/200/200"
+      currentTemp={95}
       highTemp={99}
       lowTemp={50} 
+      percipitation={10}
+      humidity={64}
+      windSpeed={6}
       />
 
 <WeatherSummary
       dayOfWeek="Wednesday"
+      weatherCondition="Light Rain"
       icon="https://picsum.photos/id/3/200/200"
+      currentTemp={95}
       highTemp={99}
       lowTemp={50} 
+      percipitation={10}
+      humidity={64}
+      windSpeed={6}
       />
 
 <WeatherSummary
       dayOfWeek="Thursday"
+      weatherCondition="Light Rain"
       icon="https://picsum.photos/id/4/200/200"
+      currentTemp={95}
       highTemp={99}
       lowTemp={50} 
+      percipitation={10}
+      humidity={64}
+      windSpeed={6}
       />
 
 <WeatherSummary
       dayOfWeek="Friday"
+      weatherCondition="Light Rain"
       icon="https://picsum.photos/id/5/200/200"
+      currentTemp={95}
       highTemp={99}
       lowTemp={50} 
+      percipitation={10}
+      humidity={64}
+      windSpeed={6}
       />
   </>
   ,

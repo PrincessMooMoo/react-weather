@@ -6,11 +6,26 @@ const WeatherSummary = ({ location, dayOfWeek, weatherCondition, icon, units, cu
     <div className="WeatherSummary">
     <h1>{location}</h1>
       <p>{dayOfWeek}</p>
-      <p>{percipitation}</p>
+      <p>{weatherCondition}</p>
       <img src={`${icon}`} />
+     <h1 className="currentTemp">
+         <Temperature temp={currentTemp}/>
+         </h1>
+     <p>&deg;F | &deg;C</p>
       <div className="WeatherSummary-temps">
-        <Temperature temp={highTemp} /> 
-      <Temperature temp={lowTemp} />
+        <div>
+            High: <Temperature temp={highTemp} /> 
+            <br></br> 
+            Low: <Temperature temp={lowTemp} />
+            <br></br>
+            Percipitation: {percipitation}%
+            <br></br>
+            Humidity: {humidity}%
+            <br></br>
+            Wind: {windSpeed} mph
+            </div> 
+
+ 
       </div>
     </div>
   );
