@@ -59,7 +59,7 @@ ReactDOM.render(
       windSpeed={6}
       />
 
-    <WeatherSummary
+    {/* <WeatherSummary
       dayOfWeek="Tuesday"
       weatherCondition="Light Rain"
       icon="https://picsum.photos/id/2/200/200"
@@ -69,9 +69,9 @@ ReactDOM.render(
       percipitation={10}
       humidity={64}
       windSpeed={6}
-      />
+      /> */}
 
-<WeatherSummary
+{/* <WeatherSummary
       dayOfWeek="Wednesday"
       weatherCondition="Light Rain"
       icon="https://picsum.photos/id/3/200/200"
@@ -81,9 +81,9 @@ ReactDOM.render(
       percipitation={10}
       humidity={64}
       windSpeed={6}
-      />
+      /> */}
 
-<WeatherSummary
+{/* <WeatherSummary
       dayOfWeek="Thursday"
       weatherCondition="Light Rain"
       icon="https://picsum.photos/id/4/200/200"
@@ -93,9 +93,9 @@ ReactDOM.render(
       percipitation={10}
       humidity={64}
       windSpeed={6}
-      />
+      /> */}
 
-<WeatherSummary
+{/* <WeatherSummary
       dayOfWeek="Friday"
       weatherCondition="Light Rain"
       icon="https://picsum.photos/id/5/200/200"
@@ -105,7 +105,7 @@ ReactDOM.render(
       percipitation={10}
       humidity={64}
       windSpeed={6}
-      />
+      /> */}
   </>
   ,
   document.getElementById('root')

@@ -9,9 +9,8 @@ const WeatherSummary = ({ location, dayOfWeek, weatherCondition, icon, units, cu
       <p>{weatherCondition}</p>
       <img src={`${icon}`} />
      <h1 className="currentTemp">
-         <Temperature temp={currentTemp}/>
-         </h1>
-     <p>&deg;F | &deg;C</p>
+         <Temperature temp={currentTemp}/></h1>
+     <p>F | C</p>
       <div className="WeatherSummary-temps">
         <div>
             High: <Temperature temp={highTemp} /> 
