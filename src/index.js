@@ -3,11 +3,12 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import WeatherSummary from './WeatherSummary';
 // import {getCoordinates, getWeatherData} from './util'; this will be used later
 
 //creating a component with a function
-const MyDate = ({ day, month = 'june' }) => <p>{`${day}, ${month}`}</p>;
-// //creatubg a cinoibebt with a class
+// const MyDate = ({ day, month = 'june' }) => <p>{`${day}, ${month}`}</p>;
+// //creating a component with a class
 // class MyTime extends React.Component {
 //   constructor(props) {
 //     super(props);
@@ -19,23 +20,7 @@ const MyDate = ({ day, month = 'june' }) => <p>{`${day}, ${month}`}</p>;
 //   }
 // };
 
-const WeatherSummary = ({ dayOfWeek, icon, highTemp, lowTemp }) => (
-  <div className="WeatherSummary">
-    <p>{dayOfWeek}</p>
-    <img src={`${icon}`} />
-    <p><Temperature temp={highTemp} /> <Temperature temp={lowTemp} /></p>
-  </div>
-);
 
-const Temperature = ({ temp }) => <span>{temp}&deg;</span>
-
-//install prop-types and then type this
-// WeatherSummary.propTypes = {
-//   dayOfWeek: PropTypes.string,
-//   icon: PropTypes.string.isRequired,
-//   highTemp: PropTypes.number,
-//   lowTemp: PropTypes.number
-// }
 
 // class WeatherSummary extends React.Componenet {
 //   static defaultProps = {
@@ -58,30 +43,45 @@ const Temperature = ({ temp }) => <span>{temp}&deg;</span>
 //   }
 // }
 
-WeatherSummary.defaultProps = {
-  dayOfWeek: 'Sun',
-  month: 'Jan'
-};
+
 
 ReactDOM.render(
   <>
     <WeatherSummary
       dayOfWeek="Monday"
+      percipitation="Light Rain"
       icon="https://picsum.photos/id/1/200/200"
       highTemp={99}
-      lowTemp={50} />
+      lowTemp={50} 
+      />
 
     <WeatherSummary
       dayOfWeek="Tuesday"
-      icon="https://picsum.photos/id/1/200/200"
+      icon="https://picsum.photos/id/2/200/200"
       highTemp={99}
-      lowTemp={50} />
+      lowTemp={50} 
+      />
 
 <WeatherSummary
       dayOfWeek="Wednesday"
-      icon="https://picsum.photos/id/1/200/200"
+      icon="https://picsum.photos/id/3/200/200"
       highTemp={99}
-      lowTemp={50} />
+      lowTemp={50} 
+      />
+
+<WeatherSummary
+      dayOfWeek="Thursday"
+      icon="https://picsum.photos/id/4/200/200"
+      highTemp={99}
+      lowTemp={50} 
+      />
+
+<WeatherSummary
+      dayOfWeek="Friday"
+      icon="https://picsum.photos/id/5/200/200"
+      highTemp={99}
+      lowTemp={50} 
+      />
   </>
   ,
   document.getElementById('root')
