@@ -118,7 +118,10 @@ import WeatherDetails from './WeatherDetails';
       currentTemp={95}
       highTemp={99}
       lowTemp={50} 
-      percipitation={10}
+      percipitation={10}p}) => (
+    <div className="WeatherSummary">
+      <p>{dayOfWeek}</p>
+      <img src={`${icon}`} alt="weather icon" />
       humidity={64}
       windSpeed={6}
       /> */}

@@ -19,11 +19,11 @@ WeatherSummary.propTypes = {
     lowTemp: PropTypes.number.isRequired,
 };
 
-WeatherSummary.defaultProps = {
-    location: 'Fresno',
-    dayOfWeek: 'Sun',
-    month: 'Jan'
-  };
+// WeatherSummary.defaultProps = {
+//     location: 'Fresno',
+//     dayOfWeek: 'Sun',
+//     month: 'Jan'
+//   };
 
 
 export default WeatherSummary;
