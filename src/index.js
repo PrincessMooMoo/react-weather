@@ -4,6 +4,7 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import WeatherSummary from './WeatherSummary';
+import WeatherDetails from './WeatherDetails';
 // import {getCoordinates, getWeatherData} from './util'; this will be used later
 
 //creating a component with a function
@@ -45,19 +46,34 @@ import WeatherSummary from './WeatherSummary';
 
 
 
-ReactDOM.render(
-  <>
-    <WeatherSummary
-      dayOfWeek="Monday"
-      weatherCondition="Light Rain"
-      icon="https://picsum.photos/id/1/200/200"
-      currentTemp={95}
-      highTemp={99}
-      lowTemp={50} 
-      percipitation={10}
-      humidity={64}
-      windSpeed={6}
-      />
+// ReactDOM.render(
+//   <>
+//   <WeatherDetails 
+//       location="Fresno"
+//       dayOfWeek="Monday"
+//       weatherCondition="Sunny"
+//       icon=""
+//       unit="imperial"
+//       currentTemp={56}
+//       lowTemp={32}
+//       highTemp={60}
+//       percipitation={10}
+//       humiditiy={24}
+//       windSpeed={5}
+//       />
+
+//     <WeatherSummary
+//       dayOfWeek="Monday"
+//       weatherCondition="Light Rain"
+//       icon="https://picsum.photos/id/1/200/200"
+//       currentTemp={95}
+//       highTemp={99}
+//       lowTemp={50} 
+//       percipitation={10}
+//       humidity={64}
+//       windSpeed={6}
+//       />
+      
 
     {/* <WeatherSummary
       dayOfWeek="Tuesday"
@@ -106,9 +122,16 @@ ReactDOM.render(
       humidity={64}
       windSpeed={6}
       /> */}
-  </>
-  ,
-  document.getElementById('root')
+//   </>
+//   ,
+//   document.getElementById('root')
+// );
+
+ReactDOM.render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>,
+    document.getElementById('root')
 );
 
 // If you want to start measuring performance in your app, pass a function
