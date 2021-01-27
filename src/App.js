@@ -1,6 +1,6 @@
 import React from 'react';
-import { getWeatherData } from './util';
-import WeatherSummary from './WeatherSummary';
+import { getWeatherData, millisecondsToDayOfWeek } from './util';
+import FiveDayForecast from './FiveDayForecast';
 import WeatherDetails from './WeatherDetails';
 
 class App extends React.Component {
@@ -10,8 +10,10 @@ class App extends React.Component {
     this.state = {
       isLoading: true,
       weather: null,
-      error: null
+      error: null,
+      activeDay: 0
     };
+    this.handleActiveDayChange = this.handleActiveDayChange.bind(this);
   }
   componentDidMount() {
     navigator.geolocation.getCurrentPosition(
@@ -47,9 +49,14 @@ class App extends React.Component {
   // componentWillUnmount() {
   //   clearTimeout(this.state.timerId);
   // }
+handleActiveDayChange(newActiveDay) {
+  this.setState({
+    activeDay: newActiveDay
+  })
+}
 
   render() {
-    const { isLoading, weather, error } = this.state;
+    const { isLoading, weather, error, activeDay } = this.state;
     const content = (
       <>
         {error
@@ -57,26 +64,40 @@ class App extends React.Component {
           : weather &&
           <>
             <WeatherDetails
-              location="Fresno"
-              dayOfWeek="Monday"
-              weatherCondition="Partially cloudy"
-              icon=""
+              location="Current Location"
+              dayOfWeek={millisecondsToDayOfWeek(weather.daily[activeDay].dt * 1000)}
+              weatherCondition={weather.daily[activeDay].weather[0].description}
+              icon={weather.daily[activeDay].weather[0].icon}
               units="imperial"
-              currentTemp={56}
-              lowTemp={32}
-              highTemp={60}
-              precipitation={10}
-              humidity={30}
-              windSpeed={5}
+              currentTemp={weather.current.temp}
+              lowTemp={weather.daily[activeDay].temp.min}
+              highTemp={weather.daily[activeDay].temp.max}
+              precipitation={weather.daily[activeDay].pop * 100}
+              humidity={weather.daily[activeDay].humidity}
+              windSpeed={weather.daily[activeDay].wind_speed}
             />
-            {weather.daily.map((data, index) => (
+            <FiveDayForecast forecast={[
+              weather.daily.map(data => {
+                return {
+                  dayOfWeek: millisecondsToDayOfWeek(data.dt * 1000),
+                  icon: data.weather[0].icon,
+                  highTemp: data.temp.max,
+                  lowTemp: data.temp.min
+                }
+              }),
+
+            ]}
+            activeDay={activeDay}
+            onActiveDayChanged={this.handleAciveDayChange}
+            />
+            {/* {weather.daily.map((data, index) => (
               <WeatherSummary
                 key={data.dt}
                 dayOfWeek='monday'
                 icon={`https://picsum.photos/id/${index}/200/200`}
                 highTemp={data.temp.max}
                 lowTemp={data.temp.min} />
-            ))}
+            ))} */}
           </>
         }
       </>

@@ -1,4 +1,6 @@
 import PropTypes from 'prop-types';
+import WeatherIcon from './WeatherIcon';
+
 const WeatherDetails = (props) => {
     return (
         <div className="WeatherDetails">
@@ -7,7 +9,7 @@ const WeatherDetails = (props) => {
             <p>{props.weatherCondition}</p>
             <div className="details_wrapper">
                 <div className="icon_and_current">
-                    <img src='https://picsum.photos/id/5/200/200'></img>
+                    <WeatherIcon iconId={props.icon} />
                     <span className="text_large">{props.currentTemp}</span>
                     <span>&deg;F</span>
                     <span>|</span>
