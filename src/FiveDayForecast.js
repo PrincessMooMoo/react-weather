@@ -2,7 +2,7 @@ import { checkPropTypes } from 'prop-types';
 import WeatherSummary from './WeatherSummary';
 
 const FiveDayForecast = ({ forecast, activeDay, onActiveDayChanged }) => {
-
+    console.log(forecast);
     return(
         <div>
             {forecast.slice(0,5).map((weatherData, index) =>

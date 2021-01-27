@@ -2,6 +2,7 @@ import React from 'react';
 import { getWeatherData, millisecondsToDayOfWeek } from './util';
 import FiveDayForecast from './FiveDayForecast';
 import WeatherDetails from './WeatherDetails';
+import SearchBar from './SearchBar';
 
 class App extends React.Component {
   constructor(props) {
@@ -63,6 +64,7 @@ handleActiveDayChange(newActiveDay) {
           ? <p>{error}</p>
           : weather &&
           <>
+            <SearchBar onSubmit={(location) => }  />
             <WeatherDetails
               location="Current Location"
               dayOfWeek={millisecondsToDayOfWeek(weather.daily[activeDay].dt * 1000)}
@@ -76,7 +78,7 @@ handleActiveDayChange(newActiveDay) {
               humidity={weather.daily[activeDay].humidity}
               windSpeed={weather.daily[activeDay].wind_speed}
             />
-            <FiveDayForecast forecast={[
+            <FiveDayForecast forecast={
               weather.daily.map(data => {
                 return {
                   dayOfWeek: millisecondsToDayOfWeek(data.dt * 1000),
@@ -84,9 +86,9 @@ handleActiveDayChange(newActiveDay) {
                   highTemp: data.temp.max,
                   lowTemp: data.temp.min
                 }
-              }),
+              })
 
-            ]}
+            }
             activeDay={activeDay}
             onActiveDayChanged={this.handleAciveDayChange}
             />
