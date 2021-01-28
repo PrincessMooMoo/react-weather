@@ -9,7 +9,7 @@ const WeatherDetails = (props) => {
             <p>{props.weatherCondition}</p>
             <div className="details_wrapper">
                 <div className="icon_and_current">
-                    <WeatherIcon iconId={props.icon} />
+                    <WeatherIcon iconID={props.icon} />
                     <span className="text_large">{props.currentTemp}</span>
                     <span>&deg;F</span>
                     <span>|</span>

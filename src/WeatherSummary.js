@@ -8,7 +8,7 @@ const WeatherSummary = ({ dayOfWeek, icon, highTemp, lowTemp, isActive, index, o
     onClick={() => onSelected(index)}
     >
       <p>{dayOfWeek}</p>
-      <WeatherIcon iconId={icon} />
+      <WeatherIcon iconID={icon} />
       <div className="WeatherSummary-temps">
             <Temperature temp={highTemp} /> 
             <Temperature temp={lowTemp} />

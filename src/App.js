@@ -64,7 +64,7 @@ handleActiveDayChange(newActiveDay) {
           ? <p>{error}</p>
           : weather &&
           <>
-            <SearchBar onSubmit={(location) => }  />
+            <SearchBar onSubmit={this.newLocationSearch}  />
             <WeatherDetails
               location="Current Location"
               dayOfWeek={millisecondsToDayOfWeek(weather.daily[activeDay].dt * 1000)}
