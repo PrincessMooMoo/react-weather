@@ -18,9 +18,7 @@ class SearchBar extends React.Component {
         this.setState({ location: '' });
     }
 
-    newLocationSearched(location) {
-        console.log(`You have searched for ${location}`)
-    }
+    
 
     render () {
         return (
